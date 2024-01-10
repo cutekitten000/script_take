@@ -269,3 +269,40 @@ body.dark .sidebar .menu-bar .bottom-content .mode .toggle-switch .switch::befor
     left: 24px;
 }
 
+/* 
+  ----------- CONTAINER -------------
+*/
+
+.container {
+    position: relative;
+    height: 100vh;
+    left: 270px;
+    width: calc(100% - 270px);
+    /* margin: 0 auto; */
+    transition: var(--tran-05);
+    border: 1px solid red;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar.close ~ .container {
+    left: 88px;
+    width: calc(100% -88px);
+}
+
+
+.container h1 {
+    color: var(--text-color);
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.initial-phrase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
