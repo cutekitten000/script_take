@@ -25,6 +25,7 @@ body {
     height: 100vh;
     background-color: var(--body-color);
     transition: var(--tran-04);
+    /* overflow: hidden; */
 }
 
 body.dark {
@@ -272,19 +273,26 @@ body.dark .sidebar .menu-bar .bottom-content .mode .toggle-switch .switch::befor
 /* 
   ----------- CONTAINER -------------
 */
-
 .container {
     position: relative;
+    padding: 30px;
     height: 100vh;
     left: 270px;
     width: calc(100% - 270px);
     /* margin: 0 auto; */
     transition: var(--tran-05);
-    border: 1px solid red;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+        "fraseologia fraseologia fraseologia"
+        "ofertas ofertas ofertas"
+        "analise analise analise"
+        "pagamento pagamento pagamento"
+        "agendamento agendamento agendamento"
+        "checklist checklist checklist"
+        "encerramento encerramento encerramento"
+        ;
 }
 
 .sidebar.close ~ .container {
@@ -295,14 +303,246 @@ body.dark .sidebar .menu-bar .bottom-content .mode .toggle-switch .switch::befor
 
 .container h1 {
     color: var(--text-color);
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 600;
 }
 
-.initial-phrase {
+.container section {
+    height: 100vh;
+    padding: 40px 20px;
+    /* text-align: center; */
+
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
+}
+
+/* 
+  ----------- CARD -------------
+*/
+.container .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--text-color);
+    text-align: left;
+    background-color: var(--sidebar-color);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: var(--tran-03);
+    position: relative;
+    overflow: hidden;
+    font-size: .8rem;
+}
+
+.container .card:hover {
+    background-color: var(--primary-color-light);
+}
+
+#card1 {
+    width: 70%;
+}
+
+.card__desc {
+    font-size: italic;
+    margin-bottom: 15px;
+}
+
+
+.cards {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 30px;
+}
+
+
+/* 
+  ----------- BUTTON -------------
+*/
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--primary-color);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+   
+button::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--primary-color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+}
+   
+button:hover {
+    color: #fff;
+}
+   
+button::before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+}
+   
+button:hover::before {
+    top: -30px;
+    left: -30px;
+}
+   
+button:active::before {
+    background: #3a0ca3;
+    transition: background 0s;
+}
+
+/* 
+  ----------- GRID -------------
+*/
+.fraseologia {
+    grid-area: fraseologia;
+}
+
+.ofertas {
+    grid-area: ofertas;
+}
+
+.analise {
+    grid-area: analise;
+}
+
+.pagamento {
+    grid-area: pagamento;
+}
+
+.agendamento {
+    grid-area: agendamento;
+}
+
+.checklist {
+    grid-area: checklist;
+}
+
+.encerramento {
+    grid-area: encerramento;
+    margin-bottom: 50px;
+}
+
+/* 
+  ----------- MODAL -------------
+*/
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--sidebar-color);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: var(--primary-color);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    background-color: var(--sidebar-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    resize: none;
+}
+
+/* 
+  ----------- SCROLLBAR -------------
+*/
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color); /* Cor do track (fundo) do scrollbar */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--toggle-color); /* Cor do thumb (cabo) do scrollbar */
+}
+
+/* 
+  ----------- ALERT BOX -------------
+*/
+.alert-box {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: #fff;
     padding: 10px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 999;
+}
+
+.alert-box.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
