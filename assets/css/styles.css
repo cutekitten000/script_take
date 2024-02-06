@@ -305,7 +305,6 @@ body.dark .sidebar .menu-bar .bottom-content .mode .toggle-switch .switch::befor
     color: var(--text-color);
     font-size: 3.5rem;
     font-weight: 600;
-    margin-top: 20px;
 }
 
 .container section {
@@ -317,6 +316,10 @@ body.dark .sidebar .menu-bar .bottom-content .mode .toggle-switch .switch::befor
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.container section .analise h1 {
+    background:red;
 }
 
 /* 
