@@ -303,7 +303,7 @@ body.dark .sidebar .menu-bar .bottom-content .mode .toggle-switch .switch::befor
 
 .container h1 {
     color: var(--text-color);
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     font-weight: 600;
 }
 
@@ -314,8 +314,12 @@ body.dark .sidebar .menu-bar .bottom-content .mode .toggle-switch .switch::befor
 
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+}
+
+.container section#ofertas {
+    height: 100%;
 }
 
 .container section .analise h1 {
@@ -346,7 +350,9 @@ body.dark .sidebar .menu-bar .bottom-content .mode .toggle-switch .switch::befor
 }
 
 #card1 {
-    width: 70%;
+    width: 45%;
+    padding: 1.4rem;
+    font-size: 1rem;
 }
 
 .card__desc {
