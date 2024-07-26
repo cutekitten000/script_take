@@ -307,7 +307,7 @@ body.dark .sidebar .menu-bar .bottom-content .mode .toggle-switch .switch::befor
 }
 
 .container section {
-    height: 100vh;
+    height: 100%;
     padding: 40px 20px;
     /* text-align: center; */
 
@@ -565,4 +565,101 @@ textarea {
 
 .container section.active {
     display: flex;
+}
+
+.container section #linksUteis h2 {
+    color: #f1f1f1;
+}
+
+/* Tabela Links Úteis */
+.links-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.links-table thead {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.links-table th, .links-table td {
+    padding: 15px;
+    text-align: left;
+}
+
+.links-table th {
+    font-weight: 600;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.links-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.links-table tbody tr:hover {
+    background-color: var(--primary-color-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.links-table td a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.links-table td a:hover {
+    color: var(--primary-color-dark);
+}
+
+/* Adicionar estilo ao cabeçalho da tabela */
+.links-table thead th {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Adicionar estilo às células da tabela */
+.links-table td {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Adicionar estilo ao hover das linhas da tabela */
+.links-table tbody tr:hover {
+    background-color: var(--primary-color-light);
+    cursor: pointer;
+}
+
+/* DARK TABLE */
+body.dark .links-table {
+    background-color: #2c2f36; /* Cor de fundo escura, mas não tão pesada */
+}
+
+body.dark .links-table thead {
+    background-color: #3a3b3c; /* Fundo do cabeçalho com uma cor mais escura, mas ainda visível */
+    color: #f1f1f1; /* Cor clara para o texto do cabeçalho */
+}
+
+body.dark .links-table th, body.dark .links-table td {
+    border-bottom: 1px solid #444; /* Borda mais suave e adequada ao tema dark */
+    color: #f1f1f1;
+}
+
+body.dark .links-table td a {
+    color: #8ab4f8; /* Cor clara e contrastante para links */
+}
+
+body.dark .links-table td a:hover {
+    color: #aabff0; /* Cor do link ao passar o mouse, um tom mais claro */
+}
+
+body.dark .links-table tbody tr:hover {
+    background-color: #3a3b3c; /* Cor de fundo mais clara para a linha ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adiciona uma leve sombra para destacar */
 }
