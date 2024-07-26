@@ -34,10 +34,24 @@ modeSwitch.addEventListener("click", () => {
 
     if(body.classList.contains("dark")) {
         modeText.innerText = "Light Mode"
+        localStorage.setItem('theme', 'dark'); // Salva o tema como dark
     } else {
         modeText.innerText = "Dark Mode"
+        localStorage.setItem('theme', 'light'); // Salva o tema como light
     }
 })
+
+// Adicione a função para carregar o tema salvo ao inicializar a página
+function loadTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark');
+        modeText.innerText = "Light Mode";
+    } else {
+        body.classList.remove('dark');
+        modeText.innerText = "Dark Mode";
+    }
+}
 
 function copyText(cardId) {
     let card = document.getElementById(cardId).querySelector(".card__desc");
@@ -102,6 +116,7 @@ function saveChanges() {
         closeModal();
         // Carrega novamente os dados salvos
         loadSavedData();
+        
     }
 }
 
@@ -121,6 +136,7 @@ function loadSavedData() {
 // Chama a função loadSavedData() quando a página é carregada
 document.addEventListener('DOMContentLoaded', function () {
     loadSavedData();
+    loadTheme();
 });
 
 // Rolamento suave para links âncora
