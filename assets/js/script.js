@@ -3,6 +3,27 @@ const sidebar = body.querySelector(".sidebar");
 const toggle = body.querySelector(".toggle");
 const modeSwitch = body.querySelector(".toggle-switch");
 const modeText = body.querySelector(".mode-text");
+const sections = document.querySelectorAll('.content-section');
+const links = document.querySelectorAll('nav a');
+
+function showSection(sectionId) {
+    sections.forEach(section => {
+        if (section.id === sectionId.replace('#', '')) {
+            section.classList.add('active');
+        } else {
+            console.log(section)
+            section.classList.remove('active');
+        }
+    });
+}
+
+links.forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const page = this.getAttribute('data-page');
+        showSection(page);
+    });
+});
 
 toggle.addEventListener("click", () => {
     sidebar.classList.toggle("close");
@@ -112,3 +133,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+showSection('fraseologia');
