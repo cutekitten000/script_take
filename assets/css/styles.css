@@ -300,10 +300,9 @@ body.dark .sidebar .menu-bar .bottom-content .mode .toggle-switch .switch::befor
     width: calc(100% -88px);
 }
 
-
 .container h1 {
     color: var(--text-color);
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     font-weight: 600;
 }
 
@@ -312,10 +311,14 @@ body.dark .sidebar .menu-bar .bottom-content .mode .toggle-switch .switch::befor
     padding: 40px 20px;
     /* text-align: center; */
 
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.content-section.active {
+    display: flex;
 }
 
 .container section#ofertas {
@@ -343,6 +346,7 @@ body.dark .sidebar .menu-bar .bottom-content .mode .toggle-switch .switch::befor
     position: relative;
     overflow: hidden;
     font-size: .8rem;
+    height: max-content;
 }
 
 .container .card:hover {
@@ -364,7 +368,7 @@ body.dark .sidebar .menu-bar .bottom-content .mode .toggle-switch .switch::befor
 .cards {
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     margin-bottom: 30px;
 }
 
@@ -556,4 +560,9 @@ textarea {
 .alert-box.show {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
+}
+
+
+.container section.active {
+    display: flex;
 }
