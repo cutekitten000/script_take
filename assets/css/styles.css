@@ -283,11 +283,11 @@ body.dark .sidebar .menu-bar .bottom-content .mode .toggle-switch .switch::befor
     transition: var(--tran-05);
 
     display: grid;
-    gap: 133px;
+    /* gap: 133px; */
     grid-template-areas: 
         "fraseologia fraseologia fraseologia"
         "ofertas ofertas ofertas"
-        "analise analise analise"
+        "analise analise"
         "pagamento pagamento pagamento"
         "agendamento agendamento agendamento"
         "checklist checklist checklist"
